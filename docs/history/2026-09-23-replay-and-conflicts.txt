@@ -1,0 +1,15 @@
+    def test_exact_replay_and_conflicting_writes(self):
+        first = self.publish()
+        self.assertEqual(self.publish(), first)
+        with self.assertRaisesRegex(ValueError, 'immutable_availability'):
+            self.publish(available_at=T2)
+        def revise(n):
+            try:
+                return self.publish(request_id='r2', task_id='task-'+str(n), available_at=T3,
+                                    supersedes=first, content={'proposal': n})
+            except ValueError as e:
+                return str(e)
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            values = list(pool.map(revise, [2, 3]))
+        self.assertEqual(values.count('memory:revision_conflict'), 1)
+        self.assertEqual(len(self.board.view(T4)['active_ids']), 1)
