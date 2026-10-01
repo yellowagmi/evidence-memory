@@ -1,0 +1,8 @@
+            if any(at(r['available_at']) > at(available_at) for r in versions):
+                raise ValueError('memory:backdated_revision')
+            retired = {json.loads(r['body_json']).get('supersedes') for r in versions}
+            heads = [r['id'] for r in versions if r['id'] not in retired]
+            if heads != ([] if supersedes is None else [supersedes]):
+                raise ValueError('memory:revision_conflict')
+            if supersedes is not None and supersedes not in sources:
+                raise ValueError('memory:prior_not_available_at_input')

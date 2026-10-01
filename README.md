@@ -11,6 +11,10 @@ Its application adapter consumes the same library through a pinned, byte-identic
 source snapshot. The adapter retains application authorization and its existing
 journal schema. This repository contains the reusable component and its tests.
 
+The memory implementation predates this standalone package. See the
+[implementation lineage](docs/HISTORY.md) for verbatim source and test excerpts
+from a September 2026 checkpoint, with commit references and file hashes.
+
 ## What it does
 
 - Retains JSON evidence with stable content identities and availability times.
