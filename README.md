@@ -115,5 +115,3 @@ Contributions are welcome. Start with the [contribution guide](CONTRIBUTING.md)
 and the [bounded roadmap](docs/ROADMAP.md).
 
 MIT licensed. Built by [@yellowagmi](https://github.com/yellowagmi).
-The wider private-system context is described in the
-[engineering portfolio](https://github.com/yellowagmi/llm-systematic-trading-architecture).
