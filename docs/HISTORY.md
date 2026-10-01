@@ -39,6 +39,32 @@ repository remains private, so readers can inspect the excerpts and verify their
 published hashes but cannot independently resolve the original commits here.
 Git timestamps and hashes alone do not independently establish publication dates.
 
+## Imported Git history
+
+The [source-history branch](https://github.com/yellowagmi/evidence-memory/tree/codex/source-history)
+contains a filtered projection of the September checkpoint. Its
+[historical commit](https://github.com/yellowagmi/evidence-memory/commit/2a592393c7cf4d5d3f123dbb93859a9a04e69b12)
+preserves the original author and committer identities and the original
+**23 September 2026** dates. The original commit was authored and committed by
+Codex; that attribution is retained.
+
+Filtering retains only the two approved excerpts, rewrites their paths to the
+archival paths in this repository, and omits unrelated source changes and all
+private parent history. The commit message records the source commit and the
+**1 October 2026** filtering date. Filtering changes the commit SHA. The
+manifest maps the original checkpoint to this public projection.
+
+The projection is connected to the public `main` history by an October import
+commit. The October release, its existing commits, and the private consumer's
+pinned source remain intact. Only one pre-extraction checkpoint was available
+for this selected slice in the inspected canonical history; no additional
+historical development steps were inferred.
+
+Preserved Git dates describe the source checkpoint. These archival paths were
+created by filtering, and their first public upload was on 1 October. They do
+not imply that the standalone library or this public repository existed in
+September. The maintained package and its new tooling retain their October dates.
+
 ## Historical validation
 
 On **1 October 2026**, the September checkpoint's original memory regression
